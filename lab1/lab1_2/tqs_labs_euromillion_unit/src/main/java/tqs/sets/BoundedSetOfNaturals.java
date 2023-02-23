@@ -34,6 +34,13 @@ public class BoundedSetOfNaturals implements Iterable<Integer> {
 
     public void add(int[] numbers) {
         for (int number : numbers) {
+            if (this.collection.contains(number)) {
+				throw new IllegalArgumentException("duplicate value: " + number);
+			}
+	
+			if (number <= 0) {
+				throw new IllegalArgumentException("Illegal argument: not a natural number");
+			}
             this.add(number);
         }
     }
@@ -50,6 +57,7 @@ public class BoundedSetOfNaturals implements Iterable<Integer> {
      * @param values elements to initialize this new Set
      * @return the new Set
      */
+
     public static BoundedSetOfNaturals fromArray(int[] values) {
         BoundedSetOfNaturals newSet = new BoundedSetOfNaturals(values.length);
         for (int element : values) {
@@ -58,7 +66,6 @@ public class BoundedSetOfNaturals implements Iterable<Integer> {
         return newSet;
     }
 
-
     public int size() {
         return this.collection.size();
     }
@@ -66,7 +73,12 @@ public class BoundedSetOfNaturals implements Iterable<Integer> {
 
     //TODO implement the intersect logic
     public boolean intersects(BoundedSetOfNaturals subset) {
-        return false;
+        for(Integer elem: subset) {
+			if(this.collection.contains(elem)) {
+				return true;
+			}
+		}
+		return false;
     }
 
     public boolean contains(Integer element) {

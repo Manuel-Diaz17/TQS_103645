@@ -43,6 +43,18 @@ class BoundedSetOfNaturalsTest {
         assertEquals(7, setB.size(), "add: elements count not as expected.");
     }
 
+    @Test
+    public void testDuplicate() {
+        assertTrue(setB.contains(30));
+        assertThrows(IllegalArgumentException.class, () -> setB.add(30), "add: added element was added but already is in set");
+    }
+
+    @Test
+    public void testNonPositive() {
+        assertThrows(IllegalArgumentException.class, () -> setA.add(0), "add: zero added but it is not positive");
+        assertThrows(IllegalArgumentException.class, () -> setA.add(-21), "add: negative value added but it is not positive");
+    }
+
     @Disabled("TODO revise to test the construction from invalid arrays")
     @Test
     public void testAddFromBadArray() {
@@ -52,5 +64,28 @@ class BoundedSetOfNaturalsTest {
         assertThrows(IllegalArgumentException.class, () -> setA.add(elems));
     }
 
+    @Test
+    public void testDuplicateFromArray() {
+        assertThrows(IllegalArgumentException.class, () -> BoundedSetOfNaturals.fromArray(new int[]{15,33,40,33}));
+    }
+
+    @Test
+    public void testNonPositiveFromArray() {
+        assertThrows(IllegalArgumentException.class, () -> BoundedSetOfNaturals.fromArray(new int[]{15,33,40,-7}));
+        assertThrows(IllegalArgumentException.class, () -> BoundedSetOfNaturals.fromArray(new int[]{15,33,40,0}));
+    }
+
+    @Test
+    public void testIntersection() {
+        assertTrue(setB.intersects(BoundedSetOfNaturals.fromArray(new int[]{15,33,40,41})));
+        assertFalse(setB.intersects(BoundedSetOfNaturals.fromArray(new int[]{15,33,41})));
+    }
+
+
+    @Test
+    public void testNoIntersection() {
+        assertFalse(setA.intersects(setB), "no intersection");
+
+    }
 
 }
