@@ -8,7 +8,7 @@
  * http://www.eclipse.org/legal/epl-v20.html
  */
 
-package com.example.project;
+package com.example.project.geocoding;
 
 import java.util.Objects;
 
@@ -44,9 +44,16 @@ public class Address {
         return Objects.hash(road, state, city, zip, houseNumber);
     }
 
-	public boolean equals(Object o){
-		return false;
-	}
+	@Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Address)) {
+            return false;
+        }
+        Address address = (Address) o;
+        return Objects.equals(road, address.road) && Objects.equals(state, address.state) && Objects.equals(city, address.city) && Objects.equals(zip, address.zip) && Objects.equals(houseNumber, address.houseNumber);
+    }
 
 	public String road() {
 		return road;
