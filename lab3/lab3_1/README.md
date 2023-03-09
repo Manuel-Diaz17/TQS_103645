@@ -35,7 +35,7 @@ used?</h2>
 O ficheiro application-integrationtest.properties tem as propriedades para se ligar a uma base de dados e configurar persistência. Por exemplo, no ficheiro de teste D_EmployeeRestControllerIT, se em vez da anotação @AutoConfigureTestDatabase tivéssemos @TestPropertySource(locations = "application-integrationtest.properties") estaríamos a aceder a uma base de dados real com o ficheiro application-integrationtest.properties.
 
 <h2>e) the sample project demonstrates three test strategies to assess an API (C, D and E) developed 
-with SpringBoot. Which are the main/key differences?<h2>
+with SpringBoot. Which are the main/key differences?</h2>
 
 As estratégias D e E apresentam algumas semelhanças enquanto que a C mostra-se um pouco mais distante de ambas.
 
