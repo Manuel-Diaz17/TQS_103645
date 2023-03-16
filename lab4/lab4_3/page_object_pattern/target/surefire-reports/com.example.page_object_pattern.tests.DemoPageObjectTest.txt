@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.page_object_pattern.tests.DemoPageObjectTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.054 s <<< FAILURE! - in com.example.page_object_pattern.tests.DemoPageObjectTest
+applyAsDeveloper  Time elapsed: 0.042 s  <<< ERROR!
+java.lang.IllegalStateException: The path to the driver executable The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from https://chromedriver.storage.googleapis.com/index.html
+	at com.example.page_object_pattern.tests.DemoPageObjectTest.setup(DemoPageObjectTest.java:21)
+
