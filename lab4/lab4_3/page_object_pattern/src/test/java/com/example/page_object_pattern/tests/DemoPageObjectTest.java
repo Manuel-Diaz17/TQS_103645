@@ -17,7 +17,7 @@ class DemoPageObjectTest {
 
     @BeforeEach
     public void setup(){
-        //use FF Driver
+        //use Chrome Driver
         driver = new ChromeDriver();
     }
 
