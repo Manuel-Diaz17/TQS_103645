@@ -57,7 +57,7 @@ public class CarServiceTest {
     }
 
     @Test
-     void whenInValidId_thenCarShouldNotBeFound() throws NullPointerException {
+     void whenInValidId_thenCarShouldNotBeFound() {
 
         assertThrows(NullPointerException.class, () -> {
             Optional<Car> fromDb = service.getCarDetails(99L);
