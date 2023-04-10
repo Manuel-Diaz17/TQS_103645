@@ -154,6 +154,7 @@ $(function() {
 
         }).then(function(data) {
             console.log(data);
+            
             $('#tpspan').text(" ");
             $('#prspan').text("  ");
             $('#huspan').text("  ");
