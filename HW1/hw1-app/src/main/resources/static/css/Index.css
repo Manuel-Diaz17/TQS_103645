@@ -1,0 +1,27 @@
+body {
+    background-color: #F3F9FF;
+}
+
+#getDataButton {
+    transition-duration: 0.4s;
+  }
+  
+#getDataButton:hover {
+    background-color: #52AEFF;
+  }
+
+#deleteButton {
+    transition-duration: 0.4s;
+  }
+  
+#deleteButton:hover {
+    background-color: #52AEFF;
+  }
+
+#updateButton {
+    transition-duration: 0.4s;
+  }
+  
+#updateButton:hover {
+    background-color: #52AEFF;
+  }
