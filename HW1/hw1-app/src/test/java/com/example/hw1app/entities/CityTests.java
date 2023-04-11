@@ -12,12 +12,6 @@ public class CityTests {
     void gettersTest(){
         Weather weather = new Weather(21.0, 95.6, 15.0, 5.4);
 
-        //ArrayList<Polluent> polluents = new ArrayList<>();
-        //Polluent p10 = new Polluent("p1", 5.0, 20.0, 20.0);
-        //polluents.add(p10);
-        //Polluent co = new Polluent("co", 3.0, 34.0, 57.0);
-        //polluents.add(co);
-
         AirQuality airQuality = new AirQuality(10.0, 9.2, "p1", "p1");
 
         City city = new City("London", "London", "United Kingdom", "timestamp", weather, airQuality );
@@ -38,6 +32,13 @@ public class CityTests {
         assertEquals(9.2, airQuality.getAqiCn());
         assertEquals("p1", airQuality.getMainPolluentUs());
         assertEquals("p1", airQuality.getMainPolluentCn());
+
+        
+        //ArrayList<Polluent> polluents = new ArrayList<>();
+        //Polluent p10 = new Polluent("p1", 5.0, 20.0, 20.0);
+        //polluents.add(p10);
+        //Polluent co = new Polluent("co", 3.0, 34.0, 57.0);
+        //polluents.add(co);
 
         //assertEquals("p1", p10.getPollName());
         //assertEquals(5.0, p10.getConc());
